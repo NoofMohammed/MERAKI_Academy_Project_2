@@ -185,4 +185,5 @@ const input = $("<button class=athcar>أذكار</button>");
 body.append(input);
 
 let arrar = Object.keys(obj);
-console.log(arrar)
+
+
