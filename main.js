@@ -174,3 +174,15 @@ add: {
 }
 
 }
+const body =$("body");
+const header =$("<h1 class=title> فَاذْكُرُونِي أَذْكُرْكُمْ وَاشْكُرُوا لِي وَلَا تَكْفُرُون </h1>");
+body.append(header);
+
+const morningDiv = $("<div> </div>");
+body.append(morningDiv);
+
+const input = $("<button class=athcar>أذكار</button>");
+body.append(input);
+
+let arrar = Object.keys(obj);
+console.log(arrar)
