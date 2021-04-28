@@ -156,7 +156,9 @@ let obj = {
   },
   add: {
     name: "أضافه اذكار",
-    list: [],
+    list: [
+        `لا اله الا انت سبحانك اني كنت من الظالمين`
+    ],
   },
 };
 const body = $("body");
@@ -180,11 +182,11 @@ button.on("click", () => {
 });
 const addressName = () => {
   const div = $(".start");
-  // const morningDiv = $("<div class=morning>أذكار الصباح</div>");
-  // div.append(morningDiv);
-  // morningDiv.on("click", () =>{
-  //     show("morning")
-  //      })
+  const morningDiv = $("<div class=morning>أذكار الصباح</div>");
+  div.append(morningDiv);
+  morningDiv.on("click", () =>{
+      show("morning")
+       })
 
   const eveningDiv = $("<div class=evening>أذكار المساء</div>");
   div.append(eveningDiv);
@@ -215,9 +217,9 @@ const show = (type) => {
   console.log(obj[type].list);
 };
 
-// const temp = () => {
+// const typeShow = () => {
 //   console.log(".evening");
-//   show("evening");
+//   show("");
 
 // };
 
