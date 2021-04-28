@@ -156,11 +156,10 @@ let obj = {
   },
   add: {
     name: "أضافه اذكار",
-    list: [
-        `لا اله الا انت سبحانك اني كنت من الظالمين`
-    ],
+    list: [`لا اله الا انت سبحانك اني كنت من الظالمين`],
   },
 };
+
 const body = $("body");
 const header = $(
   "<h1 class=title> فَاذْكُرُونِي أَذْكُرْكُمْ وَاشْكُرُوا لِي وَلَا تَكْفُرُون </h1>"
@@ -174,7 +173,7 @@ const button = $("<button class=athcar>أذكار</button>");
 body.append(button);
 const div = $(".main");
 
-let arrar = Object.keys(obj);
+let arrayTheker = Object.keys(obj);
 
 button.on("click", () => {
   console.log("999999999999999999");
@@ -182,53 +181,54 @@ button.on("click", () => {
 });
 const addressName = () => {
   const div = $(".start");
-  const morningDiv = $("<div class=morning>أذكار الصباح</div>");
+  const morningDiv = $("<div id='morning' class='thecer'>أذكار الصباح</div>");
   div.append(morningDiv);
-  morningDiv.on("click", () =>{
-    morningDiv.show();
-    eveningDiv.hide();
-    sleepDiv.hide();
-    weekUpDiv.hide();
-    addDiv.hide();
-      funShow("morning")
-      
-       })
-       
-       
+  morningDiv.on("click", () => {
+    $(".thecer").hide();
+    $("#morning").show();
+    funShow("morning");
+  });
 
-  const eveningDiv = $("<div class=evening>أذكار المساء</div>");
+  const eveningDiv = $("<div id='evening' class='thecer'>أذكار المساء</div>");
   div.append(eveningDiv);
   eveningDiv.on("click", () => {
-    show("evening");
+    $(".thecer").hide();
+    $("#evening").show();
+    funShow("evening");
   });
 
-  const sleepDiv = $("<div class=sleep>أذكار النوم</div>");
+  const sleepDiv = $("<div id='sleep' class='thecer'>أذكار النوم</div>");
   div.append(sleepDiv);
   sleepDiv.on("click", () => {
-    show("sleep");
+    $(".thecer").hide();
+    $("#sleep").show();
+    funShow("sleep");
   });
 
-  const weekUpDiv = $("<div class=weekUp>أذكار الأستيقاظ من النوم</div>");
+  const weekUpDiv = $(
+    "<div id='weekUp' class='thecer'>أذكار الأستيقاظ من النوم</div>"
+  );
   div.append(weekUpDiv);
   weekUpDiv.on("click", () => {
-    show("weekUp");
+    $(".thecer").hide();
+    $("#weekUp").show();
+    funShow("weekUp");
   });
 
   const addDiv = $("<div class=add>أضافه أذكار</div>");
   div.append(addDiv);
   addDiv.on("click", () => {
-    show("add");
+    $(".thecer").hide();
+    $("#add").show();
+    funShow("add");
   });
 };
+
 const funShow = (type) => {
-  obj[type].list;
-//   console.log(obj[type].list);
+  let array = obj[type].list;
+  for (let i = 0; i < array.length; i++) {
+    let ul = $(".manyArray");
+    let li = $(`<li>${array[i]}</li>`);
+    ul.append(li);
+  }
 };
-
-// const typeShow = () => {
-//   console.log(".evening");
-//   show("");
-
-// };
-
-
