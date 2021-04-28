@@ -164,14 +164,14 @@ const body = $("body");
 const header = $(
   "<h1 class=title> فَاذْكُرُونِي أَذْكُرْكُمْ وَاشْكُرُوا لِي وَلَا تَكْفُرُون </h1>"
 );
-body.append(header);
+// body.append(header);
+const main = $(".main");
 
 const morningDiv = $("<div> </div>");
 body.append(morningDiv);
 
 const button = $("<button class=athcar>أذكار</button>");
-body.append(button);
-const div = $(".main");
+main.append(button);
 
 let arrayTheker = Object.keys(obj);
 
@@ -180,9 +180,9 @@ button.on("click", () => {
   addressName();
 });
 const addressName = () => {
-  const div = $(".start");
+  const start = $(".start");
   const morningDiv = $("<div id='morning' class='thecer'>أذكار الصباح</div>");
-  div.append(morningDiv);
+  start.append(morningDiv);
   morningDiv.on("click", () => {
     $(".thecer").hide();
     $("#morning").show();
@@ -190,7 +190,7 @@ const addressName = () => {
   });
 
   const eveningDiv = $("<div id='evening' class='thecer'>أذكار المساء</div>");
-  div.append(eveningDiv);
+  start.append(eveningDiv);
   eveningDiv.on("click", () => {
     $(".thecer").hide();
     $("#evening").show();
@@ -198,7 +198,7 @@ const addressName = () => {
   });
 
   const sleepDiv = $("<div id='sleep' class='thecer'>أذكار النوم</div>");
-  div.append(sleepDiv);
+  start.append(sleepDiv);
   sleepDiv.on("click", () => {
     $(".thecer").hide();
     $("#sleep").show();
@@ -208,7 +208,7 @@ const addressName = () => {
   const weekUpDiv = $(
     "<div id='weekUp' class='thecer'>أذكار الأستيقاظ من النوم</div>"
   );
-  div.append(weekUpDiv);
+  start.append(weekUpDiv);
   weekUpDiv.on("click", () => {
     $(".thecer").hide();
     $("#weekUp").show();
@@ -216,7 +216,7 @@ const addressName = () => {
   });
 
   const addDiv = $("<div class=add>أضافه أذكار</div>");
-  div.append(addDiv);
+  start.append(addDiv);
   addDiv.on("click", () => {
     $(".thecer").hide();
     $("#add").show();
@@ -226,9 +226,37 @@ const addressName = () => {
 
 const funShow = (type) => {
   let array = obj[type].list;
-  for (let i = 0; i < array.length; i++) {
-    let ul = $(".manyArray");
-    let li = $(`<li>${array[i]}</li>`);
-    ul.append(li);
-  }
+
+const questionContainer = $( `<div class='questionContainer'>${array[0]}</div>`);
+main.append(questionContainer);
+
+
+
+
+
+
+  const buttonContainer = $("<div class='buttonContainer'></div>");
+  const iconLeft = $(`<div class='clickLeft'><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-square" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm11.5 5.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+</svg></>`);
+buttonContainer.html(iconLeft);
+  const iconRight = $(`<div class='clickRight'><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-square" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4.5 5.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+</svg></div>`);
+buttonContainer.append(iconRight);
+
+
+
+
+main.append(buttonContainer);
+
+
+//   for (let i = 0; i < array.length; i++) {
+//     let ul = $(".manyArray");
+    
+//     let li = $(`<li>${array[i]}</li>`);
+//     console.log(array[i])
+//     ul.append(li);
+//   }
 };
+
