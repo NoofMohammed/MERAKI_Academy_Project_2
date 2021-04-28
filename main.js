@@ -185,8 +185,16 @@ const addressName = () => {
   const morningDiv = $("<div class=morning>أذكار الصباح</div>");
   div.append(morningDiv);
   morningDiv.on("click", () =>{
-      show("morning")
+    morningDiv.show();
+    eveningDiv.hide();
+    sleepDiv.hide();
+    weekUpDiv.hide();
+    addDiv.hide();
+      funShow("morning")
+      
        })
+       
+       
 
   const eveningDiv = $("<div class=evening>أذكار المساء</div>");
   div.append(eveningDiv);
@@ -212,9 +220,9 @@ const addressName = () => {
     show("add");
   });
 };
-const show = (type) => {
+const funShow = (type) => {
   obj[type].list;
-  console.log(obj[type].list);
+//   console.log(obj[type].list);
 };
 
 // const typeShow = () => {
@@ -223,5 +231,4 @@ const show = (type) => {
 
 // };
 
-console.log(arrar);
-let index = 0;
+
