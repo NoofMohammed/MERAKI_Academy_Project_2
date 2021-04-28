@@ -39,13 +39,33 @@ img {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: black;
 }
-/* .textContainer{
+.buttonContainer {
   display: flex;
-  justify-content: space-around;
-} */
+  justify-content: center;
+}
 svg{
   display: flex;
   justify-content: space-around;
   width: 5em;
   height: 5em;
+}
+.clickRight {
+  padding: 40px;
+}
+.clickLeft {
+  padding: 40px;
+}
+.textContainer {
+  background-color: #E6CD94;
+  margin: 50px 50px 50px 40px;
+  width: 85%;
+  height: auto;
+  text-align: center;
+  align-items: center;
+  font-size: 35px;
+  color: #6B5392;
+  border-radius: 24px;
+  padding: 12px 0;
+  
+  
 }
