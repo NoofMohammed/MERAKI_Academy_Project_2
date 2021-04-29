@@ -170,7 +170,7 @@ const main = $(".main");
 const morningDiv = $("<div> </div>");
 body.append(morningDiv);
 
-const button = $("<button class=athcar>أذكار</button>");
+const button = $("<button class=athkar>أذكار</button>");
 main.append(button);
 
 let arrayTheker = Object.keys(obj);

@@ -1,7 +1,7 @@
 body {
   margin: 0;
   height: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
   /* background-image: url("https://www.floraqueen.com/blog/wp-content/uploads/2020/02/shutterstock_1009843408.jpg"); */
   background-repeat: no-repeat;
   background-size: 100%;
@@ -18,18 +18,18 @@ img {
   color: white;
   padding: 222px 40px 80px 535px;
 }
-.athcar {
-  background-color: rgb(131, 48, 94);
+.athkar {
+  background-color: #EEB74A;
   cursor: pointer;
   color: white;
-  /* padding: 15px 60px; */
+  padding: 7px 68px;
   width: 10%;
-  /* border-radius: 24px; */
+  border-radius: 17px;
   font-size: 25px;
-  text-align: center;
   align-items: center;
-  margin-right: 100px;
-  margin-top: 1oopx;
+  text-align: center;
+  margin: 101px  300px;
+ 
 }
 .start {
   display: flex;
