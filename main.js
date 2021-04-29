@@ -174,7 +174,6 @@ main.append(button);
 let arrayTheker = Object.keys(obj);
 
 button.on("click", () => {
-  console.log("999999999999999999");
 
   addressName();
 });
