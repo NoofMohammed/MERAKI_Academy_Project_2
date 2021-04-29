@@ -172,14 +172,15 @@ const button = $("<button class=athkar>أذكار</button>");
 main.append(button);
 
 let arrayTheker = Object.keys(obj);
-
+const container = $(".container");
 button.on("click", () => {
-
+  container.html("")
   addressName();
 });
 const addressName = () => {
   const start = $(".start");
   start.html("");
+  
 
   const morningDiv = $("<div id='morning' class='theker'>أذكار الصباح</div>");
 
@@ -232,9 +233,10 @@ const createButtons = (type) => {
   currentType = type;
   let array = obj[type].list;
   let index = 0;
+  
 
   const textContainer = $(`<div class='textContainer'>${array[index]}</div>`);
-  main.append(textContainer);
+  container.append(textContainer);
 
   const buttonContainer = $("<div class='buttonContainer'></div>");
   const iconLeft = $(`<div class='clickLeft'> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-square-fill" viewBox="0 0 16 16">
@@ -252,9 +254,10 @@ const createButtons = (type) => {
   iconRight.on("click", () => {
     index += 1;
     showThiker(array, index);
+   
   });
 
-  main.append(buttonContainer);
+  container.append(buttonContainer);
   morningDiv.html("");
 };
 const showThiker = (array, index) => {
