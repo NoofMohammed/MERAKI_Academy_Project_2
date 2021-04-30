@@ -174,13 +174,12 @@ main.append(button);
 let arrayTheker = Object.keys(obj);
 const container = $(".container");
 button.on("click", () => {
-  container.html("")
+  container.html("");
   addressName();
 });
 const addressName = () => {
   const start = $(".start");
   start.html("");
-  
 
   const morningDiv = $("<div id='morning' class='theker'>أذكار الصباح</div>");
 
@@ -223,7 +222,7 @@ const addressName = () => {
     $(".theker").hide();
     $("#add").show();
     // createButtons("add");
-    addtion()
+    addtion();
   });
 };
 let currentType;
@@ -234,7 +233,6 @@ const createButtons = (type) => {
   currentType = type;
   let array = obj[type].list;
   let index = 0;
-  
 
   const textContainer = $(`<div class='textContainer'>${array[index]}</div>`);
   container.append(textContainer);
@@ -255,7 +253,6 @@ const createButtons = (type) => {
   iconRight.on("click", () => {
     index += 1;
     showThiker(array, index);
-   
   });
 
   container.append(buttonContainer);
@@ -266,21 +263,24 @@ const showThiker = (array, index) => {
   const textContainer = $(".textContainer");
   textContainer.html(array[index]);
 };
-const addtion = () =>{
+const addtion = () => {
   const input = $("<textarea id='text'></textarea>");
-  main.append(input)
+  main.append(input);
   // const addDiv = $("#add");
- const  buttonAdd =  $("<button class='buttonAdd'>Add</button>");
- main.append(buttonAdd);
- buttonAdd.on("click", ()=>{
-   addClick()
- })
-}
+  const buttonAdd = $("<button class='buttonAdd'>Add</button>");
+  main.append(buttonAdd);
+  buttonAdd.on("click", () => {
+    addClick();
+  });
+};
 const addClick = () => {
-  localStorage.setItem("array", "[]")
-
-}
-const saveValue = () =>{
-  let storedValue = localStorage.getItem("input");
-  localStorage.setItem()
-}
+  const input = $("#text").val();
+  const value = localStorage.getItem("array");
+  if (value === null) {
+    localStorage.setItem("array", JSON.stringify([input]));
+  } else {
+    let newArray = JSON.parse(value);
+    newArray.push(input);
+    localStorage.setItem("array", JSON.stringify(newArray));
+  }
+};
