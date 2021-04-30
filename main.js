@@ -222,7 +222,8 @@ const addressName = () => {
   addDiv.on("click", () => {
     $(".theker").hide();
     $("#add").show();
-    createButtons("add");
+    // createButtons("add");
+    addtion()
   });
 };
 let currentType;
@@ -265,3 +266,11 @@ const showThiker = (array, index) => {
   const textContainer = $(".textContainer");
   textContainer.html(array[index]);
 };
+const addtion = () =>{
+  const input = $("<textarea id='text'></textarea>");
+  main.append(input)
+  // const addDiv = $("#add");
+ const  buttonAdd =  $("<button class='buttonAdd'>Add</button>");
+ main.append(buttonAdd);
+}
+
