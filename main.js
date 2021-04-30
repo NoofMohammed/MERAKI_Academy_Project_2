@@ -152,9 +152,9 @@ let obj = {
       `لا إله إلا الله وحـده لا شـريك له، له الملـك وله الحمـد، وهو على كل شيء قدير، سـبحان الله، والحمـد لله ، ولا إله إلا الله والله أكبر، ولا حول ولا قوة إلا بالله العلي العظيم. رب اغفر لي. `,
     ],
   },
-  add: {
-    name: "أضافه اذكار",
-    list: [`لا اله الا انت سبحانك اني كنت من الظالمين`],
+  new: {
+    name: "الأذكار المضافه",
+    list: []
   },
 };
 
@@ -224,12 +224,26 @@ const addressName = () => {
     // createButtons("add");
     addtion();
   });
+  
+  const showDiv = $("<div id='show' class='theker'>الأذكار المضافه</div>");
+  start.append(showDiv);
+  showDiv.on("click", () => {
+    $(".theker").hide();
+    $("#add").show();
+    const value = localStorage.getItem("array");
+    if(value !== null) {
+      obj.new.list = JSON.parse(value);
+    }
+    console.log(obj.new.list)
+    createButtons("new");
+  });
 };
 let currentType;
 const createButtons = (type) => {
   if (currentType === type) {
     return;
   }
+  
   currentType = type;
   let array = obj[type].list;
   let index = 0;
@@ -269,12 +283,22 @@ const addtion = () => {
   // const addDiv = $("#add");
   const buttonAdd = $("<button class='buttonAdd'>Add</button>");
   main.append(buttonAdd);
+  
+  const buttonShow =  $("<button class='buttonShow'>Show</button>");
+  main.append(buttonShow);
+  buttonShow.on("click", () => {
+    showClick();
+    
+  });
+  
   buttonAdd.on("click", () => {
     addClick();
+    
   });
 };
 const addClick = () => {
   const input = $("#text").val();
+  $("#text").val("")
   const value = localStorage.getItem("array");
   if (value === null) {
     localStorage.setItem("array", JSON.stringify([input]));
@@ -283,4 +307,6 @@ const addClick = () => {
     newArray.push(input);
     localStorage.setItem("array", JSON.stringify(newArray));
   }
+  
 };
+
