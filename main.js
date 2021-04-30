@@ -310,3 +310,21 @@ const addClick = () => {
   
 };
 
+const comment = $(".comment");
+comment.on("click", () =>{
+  commentClick()
+})
+const commentClick = () =>{
+  const input2 = $(".textUser").val();
+  $(".textUser").val("")
+  const value1 = localStorage.getItem("comments");
+  if (value1 === null) {
+    localStorage.setItem("comments", JSON.stringify([input2]));
+  } else {
+    let newcomment = JSON.parse(value1);
+    newcomment.push(input2);
+    localStorage.setItem("comments", JSON.stringify(newcomment));
+  }
+
+}
+
