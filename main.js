@@ -272,5 +272,15 @@ const addtion = () =>{
   // const addDiv = $("#add");
  const  buttonAdd =  $("<button class='buttonAdd'>Add</button>");
  main.append(buttonAdd);
+ buttonAdd.on("click", ()=>{
+   addClick()
+ })
 }
+const addClick = () => {
+  localStorage.setItem("array", "[]")
 
+}
+const saveValue = () =>{
+  let storedValue = localStorage.getItem("input");
+  localStorage.setItem()
+}
