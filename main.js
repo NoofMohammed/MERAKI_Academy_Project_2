@@ -164,15 +164,14 @@ let obj = {
 
 const body = $("body");
 
-const main = $(".main");
+const main = $(".containeMain");
 // const header = $("<h1 class=title> فَاذْكُرُونِي أَذْكُرْكُمْ وَاشْكُرُوا لِي وَلَا تَكْفُرُون </h1>");
 // main.append(header);
+const doaa = $(".doaa");
+const button = $(".athkar");
+doaa.append(button);
+main.append(doaa)
 
-const morningDiv = $("<div></div>");
-body.append(morningDiv);
-
-const button = $("<button class=athkar>أذكار</button>");
-main.append(button);
 
 let arrayTheker = Object.keys(obj);
 const container = $(".container");
@@ -228,7 +227,7 @@ const addressName = () => {
     $(".theker").hide();
     $("#add").show();
     // createButtons("add");
-    addtion();
+    addTheker();
   });
   
   const showDiv = $("<div id='show' class='theker'>الأذكار المضافه</div>");
@@ -289,22 +288,22 @@ const createButtons = (type) => {
   });
 
   container.append(buttonContainer);
-  morningDiv.html("");
+  // morningDiv.html("");
 };
 const showThiker = (array, index) => {
   array[index];
   const textContainer = $(".textContainer");
   textContainer.html(array[index]);
 }; 
-const addtion = () => {
-  const addComment = $("<div class='addComment'></div>");
-  main.append(addComment)
+const addTheker = () => {
+  const addDuaa = $("<div class='addDuaa'></div>");
+  main.append(addDuaa)
   const input = $("<textarea id='text' class='newThker'></textarea>");
-  addComment.append(input);
+  addDuaa.append(input);
   // window.onload 
   // const addDiv = $("#add");
   const buttonAdd = $("<button id='buttonAdd' class='newThker'>Add</button>");
-  addComment.append(buttonAdd);
+  addDuaa.append(buttonAdd);
   
   
   
