@@ -301,7 +301,7 @@ const addtion = () => {
   main.append(addComment)
   const input = $("<textarea id='text' class='newThker'></textarea>");
   addComment.append(input);
-  window.onload 
+  // window.onload 
   // const addDiv = $("#add");
   const buttonAdd = $("<button id='buttonAdd' class='newThker'>Add</button>");
   addComment.append(buttonAdd);
@@ -316,6 +316,9 @@ const addtion = () => {
 };
 const addClick = () => {
   const input = $("#text").val();
+  if(input === ""){
+    return
+  }
   $("#text").val("")
   const value = localStorage.getItem("array");
   if (value === null) {
