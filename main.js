@@ -236,7 +236,6 @@ const addressName = () => {
     if(value !== null) {
       obj.new.list = JSON.parse(value);
     }
-    console.log(obj.new.list)
     createButtons("new");
   });
 
@@ -275,6 +274,15 @@ const createButtons = (type) => {
     index += 1;
     showThiker(array, index);
   });
+
+  if (type === "new") {
+    const delet = $("<button class='delete'>Delete</button>");
+    buttonContainer.append(delet);
+    delet.on("click", () => {
+      index -= 1;
+      funDelet(array, index)
+    })
+  }
 
   container.append(buttonContainer);
   // morningDiv.html("");
@@ -319,5 +327,11 @@ const addClick = () => {
  
     
 };
+const funDelet = (array, index) => {
+  array.splice(index, 1);
+  localStorage.setItem("array", JSON.stringify(array));
+  const textContainer = $(".textContainer");
+  textContainer.html("");
+}
 
 

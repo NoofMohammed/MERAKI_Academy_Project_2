@@ -40,6 +40,7 @@ body {
 .buttonContainer {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 svg {
   display: flex;
@@ -118,4 +119,13 @@ svg {
   background-color: #926e82;
   color: navajowhite;
   border-radius: 7px;
+}
+button.delete {
+  background-color: #ca8888;
+  cursor: pointer;
+  color: white;
+  padding: 7px 7px;
+  height: 49px;
+  border-radius: 17px;
+  font-size: 30px;
 }
