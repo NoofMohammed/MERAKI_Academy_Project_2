@@ -2,9 +2,9 @@ body {
   margin: 0;
   /* height: 100%; */
   /* overflow: hidden; */
-  /* background-image: url("https://www.floraqueen.com/blog/wp-content/uploads/2020/02/shutterstock_1009843408.jpg"); */
+  background-image: url("https://www.sqorebda3.com/vb/attachments/21605/");
   background-repeat: no-repeat;
-  background-color: #69DFE0;
+  /* background-color: #E6CD94; */
 
   background-size: 100%;
 }
@@ -69,7 +69,7 @@ svg{
   width: 5em;
   height: 5em;
   
-    fill: #B87B33;
+    fill: snow;
 
 }
 .clickRight {
@@ -81,7 +81,7 @@ svg{
   cursor: pointer;
 }
 .textContainer {
-  background-color: #E6CD94;
+  background-color: snow;
   margin: 12px -1px 4px 45px;
   width: 100%;
   height: 45%;
