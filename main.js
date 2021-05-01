@@ -156,14 +156,17 @@ let obj = {
     name: "الأذكار المضافه",
     list: []
   },
+  comment: {
+    name: "التعليقات",
+    list: []
+  },
 };
 
 const body = $("body");
-const header = $(
-  "<h1 class=title> فَاذْكُرُونِي أَذْكُرْكُمْ وَاشْكُرُوا لِي وَلَا تَكْفُرُون </h1>"
-);
-// body.append(header);
+
 const main = $(".main");
+// const header = $("<h1 class=title> فَاذْكُرُونِي أَذْكُرْكُمْ وَاشْكُرُوا لِي وَلَا تَكْفُرُون </h1>");
+// main.append(header);
 
 const morningDiv = $("<div></div>");
 body.append(morningDiv);
@@ -173,10 +176,12 @@ main.append(button);
 
 let arrayTheker = Object.keys(obj);
 const container = $(".container");
+container.hide();
 button.on("click", () => {
   container.html("");
   addressName();
   $(".newThker").hide();
+
 });
 const addressName = () => {
   const start = $(".start");
@@ -238,6 +243,18 @@ const addressName = () => {
     console.log(obj.new.list)
     createButtons("new");
   });
+  const commentDiv = $("<div id='comment' class='theker'>التعليقات</div>");
+  start.append(commentDiv);
+  commentDiv.on("click", () => {
+    $(".theker").hide();
+    $("#comment").show();
+    const value = localStorage.getItem("array");
+    if(value !== null) {
+      obj.new.list = JSON.parse(value);
+    }
+    console.log(obj.new.list)
+    createButtons("comment");
+  });
 };
 let currentType;
 const createButtons = (type) => {
@@ -250,7 +267,8 @@ const createButtons = (type) => {
   let index = 0;
 
   const textContainer = $(`<div class='textContainer'>${array[index]}</div>`);
-  container.append(textContainer);
+  container.show()
+  container.html(textContainer);
 
   const buttonContainer = $("<div class='buttonContainer'></div>");
   const iconLeft = $(`<div class='clickLeft'> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-square-fill" viewBox="0 0 16 16">
@@ -279,11 +297,14 @@ const showThiker = (array, index) => {
   textContainer.html(array[index]);
 }; 
 const addtion = () => {
+  const addComment = $("<div class='addComment'></div>");
+  main.append(addComment)
   const input = $("<textarea id='text' class='newThker'></textarea>");
-  main.append(input);
+  addComment.append(input);
+  window.onload 
   // const addDiv = $("#add");
   const buttonAdd = $("<button id='buttonAdd' class='newThker'>Add</button>");
-  main.append(buttonAdd);
+  addComment.append(buttonAdd);
   
   
   
@@ -308,13 +329,14 @@ const addClick = () => {
     
 };
 
-const comment = $(".comment");
+const comment = $("#commentButton");
 comment.on("click", () =>{
   commentClick()
 })
 const commentClick = () =>{
-  const input2 = $(".textUser").val();
-  $(".textUser").val("")
+  const input2 = $("#textUser").val();
+  console.log(input2)
+  $("#textUser").val("")
   const value1 = localStorage.getItem("comments");
   if (value1 === null) {
     localStorage.setItem("comments", JSON.stringify([input2]));
