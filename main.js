@@ -154,30 +154,26 @@ let obj = {
   },
   new: {
     name: "الأذكار المضافه",
-    list: []
-  }
+    list: [],
+  },
 };
 
 const body = $("body");
 
 const main = $(".containeMain");
-// const header = $("<h1 class=title> فَاذْكُرُونِي أَذْكُرْكُمْ وَاشْكُرُوا لِي وَلَا تَكْفُرُون </h1>");
-// main.append(header);
 const doaa = $(".doaa");
 const button = $(".athkar");
 doaa.append(button);
-main.append(doaa)
-
+main.append(doaa);
 
 let arrayTheker = Object.keys(obj);
 const container = $(".container");
 container.hide();
 button.on("click", () => {
-  currentType = null
+  currentType = null;
   container.html("");
   addressName();
   $(".newThker").hide();
-
 });
 const addressName = () => {
   const start = $(".start");
@@ -223,38 +219,36 @@ const addressName = () => {
   addDiv.on("click", () => {
     $(".theker").hide();
     $("#add").show();
-    // createButtons("add");
     addTheker();
   });
-  
+
   const showDiv = $("<div id='show' class='theker'>الأذكار المضافه</div>");
   start.append(showDiv);
   showDiv.on("click", () => {
     $(".theker").hide();
     $("#show").show();
     const value = localStorage.getItem("array");
-    if(value !== null) {
+    if (value !== null) {
       obj.new.list = JSON.parse(value);
     }
     createButtons("new");
   });
-
 };
 let currentType;
 const createButtons = (type) => {
   if (currentType === type) {
     return;
   }
-  
+
   currentType = type;
   let array = obj[type].list;
   let index = 0;
 
   if (!array[index]) {
-    return ;
+    return;
   }
   const textContainer = $(`<div class='textContainer'>${array[index]}</div>`);
-  container.show()
+  container.show();
   container.html(textContainer);
 
   const buttonContainer = $("<div class='buttonContainer'></div>");
@@ -280,42 +274,35 @@ const createButtons = (type) => {
     buttonContainer.append(delet);
     delet.on("click", () => {
       index -= 1;
-      funDelet(array, index)
-    })
+      funDelet(array, index);
+    });
   }
 
   container.append(buttonContainer);
-  // morningDiv.html("");
 };
 const showThiker = (array, index) => {
   array[index];
   const textContainer = $(".textContainer");
   textContainer.html(array[index]);
-}; 
+};
 const addTheker = () => {
   const addDuaa = $("<div class='addDuaa'></div>");
-  main.append(addDuaa)
+  main.append(addDuaa);
   const input = $("<textarea id='text' class='newThker'></textarea>");
   addDuaa.append(input);
-  // window.onload 
-  // const addDiv = $("#add");
   const buttonAdd = $("<button id='buttonAdd' class='newThker'>Add</button>");
   addDuaa.append(buttonAdd);
-  
-  
-  
+
   buttonAdd.on("click", () => {
     addClick();
-
-    
   });
 };
 const addClick = () => {
   const input = $("#text").val();
-  if(!input ){
-    return
+  if (!input) {
+    return;
   }
-  $("#text").val("")
+  $("#text").val("");
   const value = localStorage.getItem("array");
   if (value === null) {
     localStorage.setItem("array", JSON.stringify([input]));
@@ -324,14 +311,10 @@ const addClick = () => {
     newArray.push(input);
     localStorage.setItem("array", JSON.stringify(newArray));
   }
- 
-    
 };
 const funDelet = (array, index) => {
   array.splice(index, 1);
   localStorage.setItem("array", JSON.stringify(array));
   const textContainer = $(".textContainer");
   textContainer.html("");
-}
-
-
+};
