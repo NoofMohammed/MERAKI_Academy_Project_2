@@ -155,11 +155,7 @@ let obj = {
   new: {
     name: "الأذكار المضافه",
     list: []
-  },
-  comment: {
-    name: "التعليقات",
-    list: []
-  },
+  }
 };
 
 const body = $("body");
@@ -177,6 +173,7 @@ let arrayTheker = Object.keys(obj);
 const container = $(".container");
 container.hide();
 button.on("click", () => {
+  currentType = null
   container.html("");
   addressName();
   $(".newThker").hide();
@@ -242,18 +239,7 @@ const addressName = () => {
     console.log(obj.new.list)
     createButtons("new");
   });
-  const commentDiv = $("<div id='comment' class='theker'>التعليقات</div>");
-  start.append(commentDiv);
-  commentDiv.on("click", () => {
-    $(".theker").hide();
-    $("#comment").show();
-    const value = localStorage.getItem("array");
-    if(value !== null) {
-      obj.new.list = JSON.parse(value);
-    }
-    console.log(obj.new.list)
-    createButtons("comment");
-  });
+
 };
 let currentType;
 const createButtons = (type) => {
@@ -265,6 +251,9 @@ const createButtons = (type) => {
   let array = obj[type].list;
   let index = 0;
 
+  if (!array[index]) {
+    return ;
+  }
   const textContainer = $(`<div class='textContainer'>${array[index]}</div>`);
   container.show()
   container.html(textContainer);
@@ -315,7 +304,7 @@ const addTheker = () => {
 };
 const addClick = () => {
   const input = $("#text").val();
-  if(input === ""){
+  if(!input ){
     return
   }
   $("#text").val("")
@@ -331,22 +320,4 @@ const addClick = () => {
     
 };
 
-const comment = $("#commentButton");
-comment.on("click", () =>{
-  commentClick()
-})
-const commentClick = () =>{
-  const input2 = $("#textUser").val();
-  console.log(input2)
-  $("#textUser").val("")
-  const value1 = localStorage.getItem("comments");
-  if (value1 === null) {
-    localStorage.setItem("comments", JSON.stringify([input2]));
-  } else {
-    let newcomment = JSON.parse(value1);
-    newcomment.push(input2);
-    localStorage.setItem("comments", JSON.stringify(newcomment));
-  }
-
-}
 
