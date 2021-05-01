@@ -112,30 +112,22 @@ svg {
   color: white;
   border-radius: 24px;
 }
-.commentContainer {
-  /* position: fixed; */
-  /* bottom: 2%; */
-  /* right: 7%; */
-}
+
 #text {
-  /* position: fixed; */
-  /* bottom: 49%; */
-  /* left: 40%; */
-  /* width: auto; */
+  width: 50%;
   border: solid 3px;
   color: slategray;
-
-  /* width: auto; */
-  border-radius: 3px;
+  border-radius: 14px;
+  height: 90px;
 }
 #buttonAdd {
-  /* position: fixed; */
-  /* left: 46%; */
-  /* bottom: 41%; */
-  /* background-size: 1px; */
-  width: 6%;
+
+  width: 12%;
+  padding: 10px;
   background-color: cornsilk;
   border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
   /* background-size: 1px; */
 }
 /* .comment{
@@ -152,4 +144,18 @@ svg {
 .textUser {
   border: solid 2px;
   color: teal;
+}
+.addDuaa {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.theker {
+  cursor: pointer;
+  padding: 7px 1px;
+}
+.theker:hover {
+  background-color: #C94B90;
+  color: black;
 }
