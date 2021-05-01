@@ -120,12 +120,13 @@ svg {
   color: navajowhite;
   border-radius: 7px;
 }
-button.delete {
-  background-color: #ca8888;
+.delete {
+  background-color: #92684f;;
   cursor: pointer;
   color: white;
   padding: 7px 7px;
   height: 49px;
   border-radius: 17px;
   font-size: 30px;
+
 }
