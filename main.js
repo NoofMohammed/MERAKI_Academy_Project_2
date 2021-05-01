@@ -165,7 +165,7 @@ const header = $(
 // body.append(header);
 const main = $(".main");
 
-const morningDiv = $("<div> </div>");
+const morningDiv = $("<div></div>");
 body.append(morningDiv);
 
 const button = $("<button class=athkar>أذكار</button>");
@@ -176,6 +176,7 @@ const container = $(".container");
 button.on("click", () => {
   container.html("");
   addressName();
+  $(".newThker").hide();
 });
 const addressName = () => {
   const start = $(".start");
@@ -229,7 +230,7 @@ const addressName = () => {
   start.append(showDiv);
   showDiv.on("click", () => {
     $(".theker").hide();
-    $("#add").show();
+    $("#show").show();
     const value = localStorage.getItem("array");
     if(value !== null) {
       obj.new.list = JSON.parse(value);
@@ -276,23 +277,19 @@ const showThiker = (array, index) => {
   array[index];
   const textContainer = $(".textContainer");
   textContainer.html(array[index]);
-};
+}; 
 const addtion = () => {
-  const input = $("<textarea id='text'></textarea>");
+  const input = $("<textarea id='text' class='newThker'></textarea>");
   main.append(input);
   // const addDiv = $("#add");
-  const buttonAdd = $("<button class='buttonAdd'>Add</button>");
+  const buttonAdd = $("<button id='buttonAdd' class='newThker'>Add</button>");
   main.append(buttonAdd);
   
-  const buttonShow =  $("<button class='buttonShow'>Show</button>");
-  main.append(buttonShow);
-  buttonShow.on("click", () => {
-    showClick();
-    
-  });
+  
   
   buttonAdd.on("click", () => {
     addClick();
+
     
   });
 };
@@ -307,7 +304,8 @@ const addClick = () => {
     newArray.push(input);
     localStorage.setItem("array", JSON.stringify(newArray));
   }
-  
+ 
+    
 };
 
 const comment = $(".comment");
