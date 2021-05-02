@@ -297,6 +297,7 @@ const addTheker = () => {
     addClick();
   });
 };
+//?????
 const addClick = () => {
   const input = $("#text").val();
   if (!input) {
@@ -304,7 +305,7 @@ const addClick = () => {
   }
   $("#text").val("");
   const value = localStorage.getItem("array");
-  if (value === null) {
+  if (value === [] ) {
     localStorage.setItem("array", JSON.stringify([input]));
   } else {
     let newArray = JSON.parse(value);
