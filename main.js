@@ -279,7 +279,7 @@ const createButtons = (type) => {
   });
 
   if (type === "new") {
-    const delet = $("<button class='delete'>Delete</button>");
+    const delet = $("<button class='delete'>حذف</button>");
     buttonContainer.append(delet);
     delet.on("click", () => {
       funDelet(array, index);
@@ -316,7 +316,7 @@ const addTheker = () => {
   addDuaa.html("")
   const input = $("<textarea id='text' class='newThker'></textarea>");
   addDuaa.append(input);
-  const buttonAdd = $("<button id='buttonAdd' class='newThker'>Add</button>");
+  const buttonAdd = $("<button id='buttonAdd' class='newThker'>اضافه</button>");
   addDuaa.append(buttonAdd);
   main.append(addDuaa);
   buttonAdd.on("click", () => {

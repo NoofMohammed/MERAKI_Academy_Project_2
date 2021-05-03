@@ -97,6 +97,7 @@ svg {
   border-radius: 6px;
   cursor: pointer;
   margin-top: 10px;
+  font-size: 25px;
 }
 
 .commentClass {
@@ -133,5 +134,6 @@ svg {
   height: 49px;
   border-radius: 17px;
   font-size: 30px;
+  width: 15%;
 
 }
