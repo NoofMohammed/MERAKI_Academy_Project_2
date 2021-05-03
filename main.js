@@ -159,7 +159,7 @@ let obj = {
 };
 
 const body = $("body");
-const pictureDid =$("p")
+const pictureDid = $("p");
 const main = $(".containeMain");
 const doaa = $(".doaa");
 const button = $(".athkar");
@@ -170,8 +170,8 @@ let arrayTheker = Object.keys(obj);
 const container = $(".container");
 container.hide();
 button.on("click", () => {
-  $('body').css("background-image", "url('')") ;
-  $('p').hide()
+  $("body").css("background-image", "url('')");
+  $("p").hide();
   currentType = null;
   container.html("");
   addressName();
@@ -259,24 +259,23 @@ const createButtons = (type) => {
 </svg></div>`);
   buttonContainer.html(iconLeft);
   iconLeft.on("click", () => {
-    if(index === 0){
+    if (index === 0) {
       return;
     }
     index -= 1;
     showThiker(array, index);
-    console.log('left', index);
-
+    console.log("left", index);
   });
   const iconRight = $(`<div class='clickRight'><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-square-fill" viewBox="0 0 16 16">
   <path d="M0 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v12zm4.5-6.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5a.5.5 0 0 1 0-1z"/>
 </svg></div>`);
   buttonContainer.append(iconRight);
   iconRight.on("click", () => {
-    if(index === array.length-1){
+    if (index === array.length - 1) {
       return;
     }
     index += 1;
-    console.log('right', index);
+    console.log("right", index);
     showThiker(array, index);
   });
 
@@ -285,21 +284,20 @@ const createButtons = (type) => {
     buttonContainer.append(delet);
     delet.on("click", () => {
       funDelet(array, index);
-      if (!array.length){
-        delet.hide()
+      if (!array.length) {
+        delet.hide();
       }
-      
+
       if (array[index]) {
-        console.log(array, index, '++++++')
+        console.log(array, index, "++++++");
         textContainer.html(array[index]);
       } else if (array[index - 1]) {
-        index -=1;
-        console.log(array, index, '------')
+        index -= 1;
+        console.log(array, index, "------");
         textContainer.html(array[index]);
       } else {
-        console.log('9999999999999')
-        textContainer.html("لا يوجد اذكار")
-
+        console.log("9999999999999");
+        textContainer.html("لا يوجد اذكار");
       }
 
       // showThiker(array, index)
@@ -315,7 +313,7 @@ const showThiker = (array, index) => {
 };
 const addDuaa = $("<div class='addDuaa'></div>");
 const addTheker = () => {
-  addDuaa.html("")
+  addDuaa.html("");
   const input = $("<textarea id='text' class='newThker'></textarea>");
   addDuaa.append(input);
   const buttonAdd = $("<button id='buttonAdd' class='newThker'>اضافه</button>");
@@ -324,7 +322,6 @@ const addTheker = () => {
   buttonAdd.on("click", () => {
     addClick();
   });
-  
 };
 //?????
 const addClick = () => {
@@ -334,7 +331,7 @@ const addClick = () => {
   }
   $("#text").val("");
   const value = localStorage.getItem("array");
-  if (value === null ) {
+  if (value === null) {
     localStorage.setItem("array", JSON.stringify([input]));
   } else {
     let newArray = JSON.parse(value);
@@ -346,6 +343,28 @@ const funDelet = (array, i) => {
   array.splice(i, 1);
   localStorage.setItem("array", JSON.stringify(array));
   const textContainer = $(".textContainer");
- 
- 
 };
+let ckeckTime = 0;
+
+const ckeckAlarm = () => {
+  if (ckeckTime === 1) {
+    console.log(ckeckTime);
+  }
+  setTimeout(ckeckAlarm, 1000 * 5);
+  ckeckTime += 1;
+};
+ckeckAlarm();
+
+//  console.log(d.getHours ())
+//  const ckeckAlarm2 = (hours,minutes) => {
+//    let d = new Date()
+//    console.log(d.getHours(),d.getMinutes())
+//   if(d.getHours() === hours && d.getMinutes()=== minutes){
+//     let sound = new Audio('/alarm.mp3');
+//     sound.play();
+//     console.log("dddd")
+//   }
+//   setTimeout (()=>{ ckeckAlarm2(hours,minutes)}, 1000 * 60)
+
+//  }
+//  ckeckAlarm2()
