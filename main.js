@@ -262,7 +262,6 @@ const createButtons = (type) => {
     }
     index -= 1;
     showThiker(array, index);
-    console.log("left", index);
   });
   const iconRight = $(`<div class='clickRight'><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-square-fill" viewBox="0 0 16 16">
   <path d="M0 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v12zm4.5-6.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5a.5.5 0 0 1 0-1z"/>
@@ -339,27 +338,39 @@ const funDelet = (array, i) => {
   localStorage.setItem("array", JSON.stringify(array));
   const textContainer = $(".textContainer");
 };
-let ckeckTime = 0;
 
+const showModal = () => {
+  const modal = $("#alarmModal");
+  modal.show();
+};
+
+const alarmParagraph = $(".alarmParagraph");
 const ckeckAlarm = () => {
-  if (ckeckTime === 1) {
-    console.log(ckeckTime);
+  let d = new Date();
+  if (d.getHours() === 6 && d.getMinutes() === 0) {
+    alarmParagraph.html(" وقت أذكار الصباح");
+    showModal();
   }
-  setTimeout(ckeckAlarm, 1000 * 5);
-  ckeckTime += 1;
+  if (d.getHours() === 19 && d.getMinutes() === 0) {
+    alarmParagraph.html(" وقت أذكار المساء");
+    showModal();
+  }
+  if (d.getHours() === 22 && d.getMinutes() === 0) {
+    alarmParagraph.html("وقت أذكار النوم");
+    showModal();
+  }
+  if (d.getHours() === 9 && d.getMinutes() === 0) {
+    alarmParagraph.html(" وقت أذكار الاستيقاظ من النوم");
+    showModal();
+  }
+  setTimeout(() => {
+    ckeckAlarm();
+  }, 1000 * 60);
 };
 ckeckAlarm();
 
-//  console.log(d.getHours ())
-//  const ckeckAlarm2 = (hours,minutes) => {
-//    let d = new Date()
-//    console.log(d.getHours(),d.getMinutes())
-//   if(d.getHours() === hours && d.getMinutes()=== minutes){
-//     let sound = new Audio('/alarm.mp3');
-//     sound.play();
-//     console.log("dddd")
-//   }
-//   setTimeout (()=>{ ckeckAlarm2(hours,minutes)}, 1000 * 60)
-
-//  }
-//  ckeckAlarm2()
+const close = $("#close");
+close.on("click", () => {
+  const modal = $("#alarmModal");
+  modal.hide();
+});
