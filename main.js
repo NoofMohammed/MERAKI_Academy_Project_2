@@ -159,7 +159,7 @@ let obj = {
 };
 
 const body = $("body");
-
+const pictureDid =$("p")
 const main = $(".containeMain");
 const doaa = $(".doaa");
 const button = $(".athkar");
@@ -171,7 +171,7 @@ const container = $(".container");
 container.hide();
 button.on("click", () => {
   $('body').css("background-image", "url('')") ;
-// toggleBGButton.on('click', function() {$('html').toggleClass('bg')} );
+  $('p').hide()
   currentType = null;
   container.html("");
   addressName();
