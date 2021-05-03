@@ -170,6 +170,8 @@ let arrayTheker = Object.keys(obj);
 const container = $(".container");
 container.hide();
 button.on("click", () => {
+  $('body').css("background-image", "url('')") ;
+// toggleBGButton.on('click', function() {$('html').toggleClass('bg')} );
   currentType = null;
   container.html("");
   addressName();

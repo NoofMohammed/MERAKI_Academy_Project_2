@@ -1,4 +1,6 @@
-
+ body{ 
+  background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHi9Wu5ZF90Fq6nxjkqLjk8bFKGYm15wOMkQ&usqp=CAU") ;
+} 
 .containeMain {
   height: 100%;
   width: 100%;
@@ -11,8 +13,11 @@ body {
   margin: 0;
   height: 100%;
   overflow: hidden;
-  background-color: #af9044;
+  background-repeat: no-repeat;
+    background-size: cover;
+  
 }
+
 .title {
   font-size: -webkit-xxx-large;
   color: white;
@@ -24,7 +29,7 @@ body {
   color: white;
   padding: 7px 7px;
   width: 18%;
-  border-radius: 17px;
+  border-radius: 14px;
   font-size: 30px;
   position: fixed;
     top: 20%;
@@ -93,11 +98,12 @@ svg {
 #buttonAdd {
   width: 12%;
   padding: 10px;
-  background-color: cornsilk;
-  border-radius: 6px;
+  background-color: #eeb7a4;
+  border-radius: 14px;
   cursor: pointer;
   margin-top: 10px;
   font-size: 25px;
+  
 }
 
 .commentClass {
@@ -127,12 +133,12 @@ svg {
   border-radius: 7px;
 }
 .delete {
-  background-color: #92684f;;
+  background-color: #eeb7a4;;
   cursor: pointer;
   color: white;
   padding: 7px 7px;
   height: 49px;
-  border-radius: 17px;
+  border-radius: 14px;
   font-size: 30px;
   width: 15%;
 
