@@ -2,7 +2,7 @@ let obj = {
   morning: {
     name: "أذكار الصباح",
     list: [
-      "   أعوذ بالله من الشيطان الرجيم الله لا إلـه إلا هو الحي القيوم لا تأخذه سنة ولا نوم له ما في السماوات وما في الأرض من ذا الذي يشفع عنده إلا بإذنه يعلم ما بين أيديهم وما خلفهم ولا يحيطون بشيء من علمه إلا بما شاء وسع كرسيه السماوات والأرض ولا يؤوده حفظهما وهو العلي العظيم",
+      "أعوذ بالله من الشيطان الرجيم الله لا إلـه إلا هو الحي القيوم لا تأخذه سنة ولا نوم له ما في السماوات وما في الأرض من ذا الذي يشفع عنده إلا بإذنه يعلم ما بين أيديهم وما خلفهم ولا يحيطون بشيء من علمه إلا بما شاء وسع كرسيه السماوات والأرض ولا يؤوده حفظهما وهو العلي العظيم.",
 
       `    بسم الله الرحمن الرحيم
         قل هو ٱلله أحد، ٱلله ٱلصمد، لم يلد ولم يولد، ولم يكن لهۥ كفوا أحدۢ.(3 مرات)`,
@@ -159,19 +159,17 @@ let obj = {
 };
 
 const body = $("body");
-const pictureDid = $("p");
 const main = $(".containeMain");
 const doaa = $(".doaa");
 const button = $(".athkar");
 doaa.append(button);
-main.append(doaa);
 
 let arrayTheker = Object.keys(obj);
 const container = $(".container");
 container.hide();
 button.on("click", () => {
   $("body").css("background-image", "url('')");
-  $("p").hide();
+  $("#picture").hide();
   currentType = null;
   container.html("");
   addressName();
@@ -299,8 +297,6 @@ const createButtons = (type) => {
         console.log("9999999999999");
         textContainer.html("لا يوجد اذكار");
       }
-
-      // showThiker(array, index)
     });
   }
 
@@ -323,7 +319,6 @@ const addTheker = () => {
     addClick();
   });
 };
-//?????
 const addClick = () => {
   const input = $("#text").val();
   if (!input) {
