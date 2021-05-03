@@ -257,15 +257,24 @@ const createButtons = (type) => {
 </svg></div>`);
   buttonContainer.html(iconLeft);
   iconLeft.on("click", () => {
+    if(index === 0){
+      return;
+    }
     index -= 1;
     showThiker(array, index);
+    console.log('left', index);
+
   });
   const iconRight = $(`<div class='clickRight'><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-square-fill" viewBox="0 0 16 16">
   <path d="M0 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v12zm4.5-6.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5a.5.5 0 0 1 0-1z"/>
 </svg></div>`);
   buttonContainer.append(iconRight);
   iconRight.on("click", () => {
+    if(index === array.length-1){
+      return;
+    }
     index += 1;
+    console.log('right', index);
     showThiker(array, index);
   });
 
@@ -273,8 +282,25 @@ const createButtons = (type) => {
     const delet = $("<button class='delete'>Delete</button>");
     buttonContainer.append(delet);
     delet.on("click", () => {
-      index -= 1;
       funDelet(array, index);
+      if (!array.length){
+        delet.hide()
+      }
+      
+      if (array[index]) {
+        console.log(array, index, '++++++')
+        textContainer.html(array[index]);
+      } else if (array[index - 1]) {
+        index -=1;
+        console.log(array, index, '------')
+        textContainer.html(array[index]);
+      } else {
+        console.log('9999999999999')
+        textContainer.html("لا يوجد اذكار")
+
+      }
+
+      // showThiker(array, index)
     });
   }
 
@@ -285,17 +311,18 @@ const showThiker = (array, index) => {
   const textContainer = $(".textContainer");
   textContainer.html(array[index]);
 };
+const addDuaa = $("<div class='addDuaa'></div>");
 const addTheker = () => {
-  const addDuaa = $("<div class='addDuaa'></div>");
-  main.append(addDuaa);
+  addDuaa.html("")
   const input = $("<textarea id='text' class='newThker'></textarea>");
   addDuaa.append(input);
   const buttonAdd = $("<button id='buttonAdd' class='newThker'>Add</button>");
   addDuaa.append(buttonAdd);
-
+  main.append(addDuaa);
   buttonAdd.on("click", () => {
     addClick();
   });
+  
 };
 //?????
 const addClick = () => {
@@ -305,7 +332,7 @@ const addClick = () => {
   }
   $("#text").val("");
   const value = localStorage.getItem("array");
-  if (value === [] ) {
+  if (value === null ) {
     localStorage.setItem("array", JSON.stringify([input]));
   } else {
     let newArray = JSON.parse(value);
@@ -313,9 +340,10 @@ const addClick = () => {
     localStorage.setItem("array", JSON.stringify(newArray));
   }
 };
-const funDelet = (array, index) => {
-  array.splice(index, 1);
+const funDelet = (array, i) => {
+  array.splice(i, 1);
   localStorage.setItem("array", JSON.stringify(array));
   const textContainer = $(".textContainer");
-  textContainer.html("");
+ 
+ 
 };
