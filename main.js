@@ -219,6 +219,7 @@ const addressName = () => {
   addDiv.on("click", () => {
     $(".theker").hide();
     $("#add").show();
+    $(".container").hide()
     addTheker();
   });
 
