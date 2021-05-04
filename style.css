@@ -1,7 +1,7 @@
 body {
   background-image: url("https://www.floraqueen.com/blog/wp-content/uploads/2020/02/shutterstock_1009843408.jpg");
 }
-#picture>p {
+#picture > p {
   font-size: 60px;
   color: white;
 }
@@ -154,23 +154,22 @@ svg {
   align-items: center;
 }
 
-
 /* modal */
 
 .modal {
-  display: none; 
-  position: fixed; 
-  padding-top: 100px; 
+  display: none;
+  position: fixed;
+  padding-top: 100px;
   left: 0;
   top: 0;
-  width: 100%; 
-  height: 100%; 
-  background-color: rgba(0,0,0,0.4); 
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal-content {
   background-color: #fefefe;
-  margin: auto;;
+  margin: auto;
   width: 80%;
 }
 
@@ -198,51 +197,47 @@ svg {
   height: 80px;
 }
 
-
-
-
 @media all and (max-width: 600px) {
   .athkar {
     width: 24%;
     font-size: 25px;
+  }
+  .start {
+    font-size: 12px;
+    padding-top: 5px;
+  }
+  svg {
+    width: 3em;
+    height: 3em;
+  }
+  .clickRight {
+    padding: 25px;
+  }
+  .clickLeft {
+    padding: 25px;
+  }
+  .textContainer {
+    width: 77%;
+    direction: rtl;
+    height: 68%;
+    font-size: 22px;
+  }
+  #picture > p {
+    font-size: 26px;
+  }
+  #buttonAdd {
+    width: 23%;
+    font-size: 22px;
+  }
+  #text {
+    width: 75%;
+    border: solid 2px;
+    border-radius: 11px;
+    height: 92px;
+    font-size: 24px;
+  }
+  .delete {
+    font-size: 24px;
+    width: 22%;
+  }
 }
-.start {
-  font-size: 12px;
-  padding-top: 5px;
-}
-svg {
-  width: 3em;
-  height: 3em;
-}
-.clickRight {
-  padding: 25px;
-}
-.clickLeft {
-  padding: 25px;
-}
-.textContainer {
-  width: 77%;
-  direction: rtl;
-  height: 68%;
-  font-size: 22px;
-}
-#picture>p {
-  font-size: 26px;
-}
-#buttonAdd{
-width: 23%;
-font-size: 22px;
-}
-#text {
-  width: 75%;
-  border: solid 2px;
-  border-radius: 11px;
-  height: 92px;
-  font-size: 24px;
-}
-.delete {
-  font-size: 24px;
-  width: 22%;
-}
-}
-
