@@ -226,7 +226,7 @@ svg {
   height: 68%;
   font-size: 22px;
 }
-p {
+#picture>p {
   font-size: 26px;
 }
 #buttonAdd{
