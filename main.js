@@ -348,7 +348,7 @@ const showModal = () => {
 const alarmParagraph = $(".alarmParagraph");
 const ckeckAlarm = () => {
   let d = new Date();
-  if (d.getHours() === 6 && d.getMinutes() === 0) {
+  if (d.getHours() === 5 && d.getMinutes() === 0) {
     alarmParagraph.html(" وقت أذكار الصباح");
     showModal();
   }
