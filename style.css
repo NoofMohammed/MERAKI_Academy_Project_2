@@ -102,6 +102,7 @@ svg {
   height: 90px;
   font-size: 28px;
   margin-bottom: 83px;
+  text-align: end;
 }
 #buttonAdd {
   width: 12%;
@@ -238,6 +239,7 @@ svg {
     border-radius: 11px;
     height: 92px;
     font-size: 24px;
+    text-align: end;
   }
   .delete {
     font-size: 24px;
